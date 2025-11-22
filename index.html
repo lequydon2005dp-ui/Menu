@@ -3,148 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Cà Phê Ban Mai</title>
-    <link rel="stylesheet" href="./index.css">
+    <title>Quét Mã Menu - Ban Mai</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Cấu hình khổ giấy in (Ví dụ khổ A6 - 10.5cm x 14.8cm) */
+        @page {
+            size: A6;
+            margin: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f5f2eb; /* Màu kem đồng bộ */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #333;
+            -webkit-print-color-adjust: exact; /* Giữ màu nền khi in */
+            print-color-adjust: exact;
+        }
+
+        .standee-container {
+            width: 100%;
+            height: 100%;
+            padding: 30px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #e0dcd0; /* Viền nhẹ để dễ cắt nếu in khổ lớn */
+        }
+
+        .header h3 {
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #666;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0;
+            letter-spacing: 1px;
+            color: #000;
+        }
+
+        .qr-section {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Khung chứa mã QR */
+        .qr-box {
+            background: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 15px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* Ảnh QR Code giả lập */
+        .qr-box img {
+            width: 180px; /* Kích thước mã QR */
+            height: 180px;
+            display: block;
+        }
+
+        .instruction {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .sub-instruction {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .footer {
+            border-top: 1px dashed #ccc;
+            padding-top: 15px;
+            margin-top: 10px;
+        }
+
+        .wifi-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .wifi-info span {
+            background: #e6e1d6;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="menu-card">
-        <header class="header">
-            <h3 class="sub-title">CÀ PHÊ</h3>
-            <h1 class="main-title">BAN MAI</h1>
-        </header>
-
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?q=80&w=2560&auto=format&fit=crop" alt="Cà phê sữa đá">
+    <div class="standee-container">
+        <div class="header">
+            <h3>CÀ PHÊ</h3>
+            <h1>BAN MAI</h1>
         </div>
 
-        <div class="menu-layout">
-            
-            <div class="column left-col">
-                <div class="menu-section">
-                    <div class="section-header">
-                        <h2 class="cat-title">CÀ PHÊ</h2>
-                        <div class="sizes">
-                            <span>S</span>
-                            <span>M</span>
-                            <span>L</span>
-                        </div>
-                    </div>
-
-                    <ul class="item-list">
-                        <li>
-                            <span class="name">Americano</span>
-                            <span class="price">40K</span>
-                            <span class="price">45K</span>
-                            <span class="price">50K</span>
-                        </li>
-                        <li>
-                            <span class="name">Latte</span>
-                            <span class="price">40K</span>
-                            <span class="price">45K</span>
-                            <span class="price">50K</span>
-                        </li>
-                        <li>
-                            <span class="name">Cà phê đen</span>
-                            <span class="price">30K</span>
-                            <span class="price">35K</span>
-                            <span class="price">40K</span>
-                        </li>
-                        <li>
-                            <span class="name">Cà phê sữa</span>
-                            <span class="price">35K</span>
-                            <span class="price">40K</span>
-                            <span class="price">45K</span>
-                        </li>
-                        <li>
-                            <span class="name">Cà phê chồn</span>
-                            <span class="price">40K</span>
-                            <span class="price">45K</span>
-                            <span class="price">50K</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="sub-image">
-                    <img src="https://images.unsplash.com/photo-1613478223719-2ab802602423?q=80&w=2858&auto=format&fit=crop" alt="Nước ép cam">
-                </div>
+        <div class="qr-section">
+            <div class="qr-box">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://google.com" alt="Mã QR Menu">
             </div>
-
-            <div class="column right-col">
-                
-                <div class="menu-section">
-                    <div class="section-header">
-                        <h2 class="cat-title">TRÀ</h2>
-                        <div class="sizes">
-                            <span>S</span>
-                            <span>M</span>
-                            <span>L</span>
-                        </div>
-                    </div>
-                    <ul class="item-list">
-                        <li>
-                            <span class="name">Trà vải</span>
-                            <span class="price">40K</span>
-                            <span class="price">45K</span>
-                            <span class="price">50K</span>
-                        </li>
-                        <li>
-                            <span class="name">Trà đào</span>
-                            <span class="price">40K</span>
-                            <span class="price">45K</span>
-                            <span class="price">50K</span>
-                        </li>
-                        <li>
-                            <span class="name">Trà chanh</span>
-                            <span class="price">35K</span>
-                            <span class="price">40K</span>
-                            <span class="price">45K</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="divider">............................................................</div>
-
-                <div class="menu-section">
-                    <div class="section-header">
-                        <h2 class="cat-title">NƯỚC ÉP</h2>
-                        <div class="sizes">
-                            <span>S</span>
-                            <span>M</span>
-                            <span>L</span>
-                        </div>
-                    </div>
-                    <ul class="item-list">
-                        <li>
-                            <span class="name">Nước ép cam</span>
-                            <span class="price">30K</span>
-                            <span class="price">35K</span>
-                            <span class="price">40K</span>
-                        </li>
-                        <li>
-                            <span class="name">Nước ép dưa hấu</span>
-                            <span class="price">30K</span>
-                            <span class="price">35K</span>
-                            <span class="price">40K</span>
-                        </li>
-                        <li>
-                            <span class="name">Nước ép dứa</span>
-                            <span class="price">25K</span>
-                            <span class="price">30K</span>
-                            <span class="price">35K</span>
-                        </li>
-                    </ul>
-                </div>
+            <div class="text-group">
+                <p class="instruction">QUÉT MÃ ĐỂ XEM MENU</p>
+                <p class="sub-instruction">Mở camera điện thoại để quét</p>
             </div>
         </div>
 
-        <footer class="footer">
-            <p>Tất cả cà phê và trà đều có thể được phục vụ nóng hoặc lạnh.</p>
-            <p class="sugar-level">LỰA CHỌN LƯỢNG ĐƯỜNG: 100% | 75% | 50% | 25%</p>
-        </footer>
+        <div class="footer">
+            <div class="wifi-info">
+                <span>Wifi: Ban Mai Cafe</span>
+                <span>Pass: 88888888</span>
+            </div>
+        </div>
     </div>
 
 </body>
