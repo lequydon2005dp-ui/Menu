@@ -1,0 +1,202 @@
+/* Reset cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eef1f5; /* Màu nền web xám nhẹ */
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Thẻ Menu chính (Tờ giấy) */
+.menu-card {
+    background-color: #f5f2eb; /* Màu be giống giấy */
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    color: #333;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sub-title {
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.main-title {
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Ảnh chính */
+.hero-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    /* border-radius: 8px; Tuỳ chọn nếu muốn bo góc */
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Layout 2 cột */
+.menu-layout {
+    display: flex;
+    gap: 40px; /* Khoảng cách giữa 2 cột lớn */
+}
+
+.column {
+    flex: 1; /* Chia đều 2 cột */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Phần tiêu đề từng mục (Tên loại + S M L) */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    border-bottom: 1px solid transparent; /* Giữ chỗ */
+}
+
+.cat-title {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.sizes {
+    display: flex;
+    gap: 20px; /* Khoảng cách giữa S M L */
+    font-weight: 600;
+    font-size: 14px;
+    padding-right: 10px; /* Căn chỉnh nhẹ với giá bên dưới */
+    width: 140px; /* Cố định chiều rộng khu vực giá để thẳng hàng */
+    justify-content: space-between;
+}
+
+/* Danh sách món */
+.item-list {
+    list-style: none;
+}
+
+.item-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05); /* Đường kẻ mờ giữa các món */
+}
+
+.item-list li:last-child {
+    border-bottom: none;
+}
+
+.item-list li .name {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: #444;
+}
+
+/* Căn chỉnh giá tiền khớp với S M L */
+.item-list li .price {
+    width: 40px; /* Chiều rộng cố định cho từng giá */
+    text-align: right;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Phần giá tiền chung wrapper (nếu muốn dùng grid sau này) */
+/* Ở đây tôi dùng trick width ở trên để đơn giản hoá */
+.item-list li > span:not(.name) {
+    /* Chọn các thẻ giá */
+    width: 46px; /* Chia đều không gian 140px / 3 ~ 46px */
+    text-align: center;
+}
+
+/* Ảnh phụ bên dưới */
+.sub-image {
+    margin-top: auto; /* Đẩy xuống dưới cùng cột trái */
+    padding-top: 30px;
+    height: 180px;
+    overflow: hidden;
+}
+
+.sub-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Divider (Dòng chấm chấm) */
+.divider {
+    color: #bbb;
+    font-size: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 20px 0;
+    opacity: 0.5;
+}
+
+/* Footer */
+.footer {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding-top: 20px;
+}
+
+.sugar-level {
+    margin-top: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #333;
+}
+
+/* RESPONSIVE: Điện thoại */
+@media (max-width: 768px) {
+    .menu-layout {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .menu-card {
+        padding: 20px;
+    }
+
+    .hero-image {
+        height: 180px;
+    }
+
+    .sub-image {
+        display: none; /* Ẩn ảnh phụ trên mobile cho gọn, hoặc để height: auto */
+    }
+}
